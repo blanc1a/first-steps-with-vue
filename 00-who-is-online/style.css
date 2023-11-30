@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --clr-background: #c6c9d2;
+  --clr-body: #eaeaea;
+}
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--clr-background);
+}
+body {
+  background-color: var(--clr-body);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-family: "Albert Sans", sans-serif;
+}
+p {
+  padding: 0;
+}
+
+h1 {
+  font-family: "Alfa Slab One", display;
+  margin: 0.5 0 0 0;
+}
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* .online {
+  background-color: green;
+}
+
+.offline {
+  background-color: red;
+}
+
+.away {
+  background-color: grey;
+} */

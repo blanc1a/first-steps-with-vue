@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link
+        href="https://fonts.bunny.net/css?family=alata:400|alexandria:300|alfa-slab-one:400|allerta-stencil:400|chilanka:400|roboto:400|space-mono:400"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.bunny.net/css?family=alata:400|albert-sans:400|alexandria:300|allerta-stencil:400|chilanka:400|roboto:400|space-mono:400"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <h1>Who is online?</h1>
+        <div>
+            <p v-for="user in users" :key="user.username">{{user.username}}
+                <span class="circle" :style=" { backgroundColor: getStatus(user).color}"> </span>
+            </p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
