@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-linkedin: #0a66c2;
+  --clr-white: white;
+  --clr-body: #f3f2ef;
+  --clr-border: lightgray;
+  --clr-font-grey: grey;
+}
+
+body {
+  background-color: var(--clr-body);
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20px;
+}
+
+.pplAndButton {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+button {
+  all: initial; /* default */
+  margin-left: auto;
+  padding: 0.2rem;
+  background-color: var(--clr-white);
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  background-color: var(--clr-white);
+  border-radius: 20px;
+}
+.personContainer {
+  background-color: var(--clr-white);
+  border: solid 0.1rem var(--clr-border);
+  border-radius: 20px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  height: 350px;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  display: block;
+  background-repeat: no-repeat;
+  background-image: url(/fallbackBanner.jpg);
+} /*fallback mit JS machen*/
+
+.bannerFigure {
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+img[alt] {
+  font-size: 0;
+}
+
+.contentContainer {
+  text-align: center;
+  height: 50%;
+  width: 50%;
+  position: relative;
+  top: 2rem;
+}
+
+.personImg {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  margin-top: -65%;
+  /* margin-bottom: -50%; */
+  border: 5px solid var(--clr-white);
+  position: relative;
+  left: 3.5rem;
+}
+
+#contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-right: 1.7rem;
+}
+
+.mutualConnections::before {
+  content: "⚭ ";
+}
+.mutualConnections::after {
+  content: " mutual connections";
+}
+
+.btnConnect {
+  all: initial;
+  color: var(--clr-linkedin);
+  background-color: var(--clr-white);
+  border: solid 1.5px var(--clr-linkedin);
+  padding: 0.3rem;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.btnConnect:hover {
+  background-color: var(--clr-linkedin);
+  color: var(--clr-white);
+}
+
+li {
+  list-style: none;
+}
+
+.personFont {
+  font-weight: 600;
+}
+.professionFont {
+  color: var(--clr-font-grey);
+}
+
+.btnClose {
+  /* all: initial; */
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--clr-font-grey);
+  border: 1px solid var(--clr-font-grey);
+  border-radius: 50px;
+  color: var(--clr-white);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
