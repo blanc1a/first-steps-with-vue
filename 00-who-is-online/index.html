@@ -19,8 +19,12 @@
     <div id="app">
         <h1>Who is online?</h1>
         <div>
+            <!--v-for = list-rendering & :key in verbindung mit v-for genutzt => gibt uniquen schlüssel-->
             <p v-for="user in users" :key="user.username">{{user.username}}
                 <span class="circle" :style=" { backgroundColor: getStatus(user).color}"> </span>
+                <!--<span class="circle" :style=" 'backgroundColor: ' + getStatus(user).color"> </span>-->
+                <!--getStatus(user).color ruft getStatus-methode auf und gibt das return obj "color" zurück-->
+                <!--color wird verwendet, um die Hintergrundfarbe dynamisch basierend auf dem status des benutzers festzulegen-->
             </p>
         </div>
     </div>

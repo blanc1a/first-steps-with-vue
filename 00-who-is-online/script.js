@@ -34,6 +34,7 @@ Vue.createApp({
       //variable zum speichern der farbe
       let color = "";
 
+      //this greift auf andere dinge in meiner vue instanz zu
       if (user.status === "online" && this.recentActivity(user)) {
         //wenn user den status online hat && auch <= 10 als lastActivity hat => dann grün
         color = "green";
@@ -44,7 +45,7 @@ Vue.createApp({
         //wenn user den status online hat && nicht <= 10 als lastActivity hat => dann rot
         color = "red";
       }
-      //methode gibt obj mit der farbe zurück
+      //methode gibt obj mit dem wert der variablen color zurück
       return { color };
     },
   },

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - v-on Counter</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app" class="inside">
+        <header>
+            <div>
+                <h1>Counter</h1>
+                <small>(click the white area)</small>
+            </div>
+            <button>Reset</button>
+        </header>
+        <main v-on:click="count++" :style="`--counter: ${count}%`">
+            <!--:style Direktive, um dynamisch den CSS Stil eines Elements einzusetzen-->
+            <!-- => --count Variablenwert wird auf `count%` gesetzt => %, da der %-wert der CSS Variable erhöht werden soll-->
+            <!-- => Backticks als Vorzeichen für Template-Literale in JS => ermöglicht das Einfügen von Zeichenketten durch ${}-->
+            <label id="counter">{{ count }}</label>
+        </main>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
