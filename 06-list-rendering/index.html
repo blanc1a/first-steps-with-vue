@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - Attribute Binding</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <section class="header__section">
+            <p class="header__task-name">💻 Coding Task</p>
+            <p class="header__bootcamp-info-wrapper">
+                <span class="header__bootcamp-modul"><strong>Modul:</strong> Web Apps with Vue.js - Part 1</span>
+                <a href="https://www.coding-bootcamps.eu/" class="header__bootcamp-link">coding-bootcamps.eu</a>
+            </p>
+        </section>
+    </header>
+    <main>
+        <div id="app" class="inside">
+            <h1>My Books</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th v-for="column in Object.keys(books[0])" :key="column"> {{column}} </th>
+                        <!--column = variable, welche den aktuellen Value jeder Iteration beinhaltet-->
+                        <!--Object.keys(books[0]) greift auf die keys von books[0] zu, object.keys weil das array books objekte enthält-->
+                        <!--Object.keys(books[0]) returnt ein array, welches die keys von books[0] ausgibt-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td v-for="row in books[0]" :key="row"> {{row}}</td>
+                    </tr>
+                    <tr>
+                        <td v-for="row in books[1]" :key="row"> {{row}}</td>
+                    </tr>
+                    <tr>
+                        <td v-for="row in books[2]" :key="row"> {{row}}</td>
+                    </tr>
+                    <tr>
+                        <td v-for="row in books[3]" :key="row"> {{row}}</td>
+                    </tr> -->
+                    <tr v-for="{title, isbn, author, publisher, price, numPages} of books" :key="books.isbn">
+                        <td>{{title}}</td>
+                        <td>{{isbn}}</td>
+                        <td>{{author}}</td>
+                        <td>{{publisher}}</td>
+                        <td>{{price}}</td>
+                        <td>{{numPages}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
