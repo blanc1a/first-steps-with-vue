@@ -562,6 +562,7 @@ Vue.createApp({
         return displayKeys.includes(propKey);
       });
       return showColumn;
+      //return Object.keys(this.books[0]);
     },
     onlyOReilly() {
       return this.books.filter(function (books) {
@@ -570,16 +571,19 @@ Vue.createApp({
     },
   },
   methods: {
-    discount(dollar, discount) {
-      //parameter dollar und discount werden übergeben, um im HTML mit inhalt gefüllt zu werden
-      const [, regularPrice] = dollar.split("$");
-      //split(), um den numerischen Teil des Preises (regularPrice) aus dem String dollar zu extrahieren
-      //Dollarzeichen wird als Trennzeichen verwendet
-      const discountValue = (regularPrice / 100) * discount;
-      //Berechnung des Rabattwerts, indem regularPrice in eine Zahl umgewandelt wird und mit dem gegebenen Prozentsatz discount multipliziert wird
-      return "$" + (regularPrice - discountValue).toFixed(2);
-      //Gibt den reduzierten Preis als formatierten String zurück
-      //Rabattwert wird vom normalen Preis abgezogen, das Ergebnis wird auf 2 Dezimalstellen gerundet (toFixed(2))
+    calcDiscount(price) {
+      let onlyPrice = price
+        .split("")
+        .filter((item) => item !== "$")
+        .join("");
+
+      onlyPrice = Number(onlyPrice); //string to number
+
+      const discountValue = (onlyPrice / 100) * 20;
+
+      //console.log(typeof onlyPrice); //um herauszufinden, was für ein datentyp
+
+      return "$" + (onlyPrice - discountValue).toFixed(2);
     },
   },
 }).mount("#app");

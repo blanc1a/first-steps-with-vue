@@ -36,8 +36,7 @@
                         <td>{{ isbn }}</td>
                         <td>{{ author }}</td>
                         <td>{{ publisher }}</td>
-                        <td><span class="strike">{{ price }}</span> {{discount(price, 20)}} </td>
-                        <!--dollar und discount parameter werden durch price und 20 ersetzt => inhalt-->
+                        <td><span class="strike">{{ price }}</span> {{calcDiscount(price)}} </td>
                         <td>{{ numPages }}</td>
                     </tr>
                 </tbody>

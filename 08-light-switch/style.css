@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.bodyLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: snow;
+  transition: background-color #333 2s ease-in-out;
+}
+button {
+  background-color: snow;
+  border: solid 5px #333;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  appearance: auto;
+}
+.bodyDark {
+  background-color: #333;
+}
+.buttonDark {
+  background-color: #333;
+  color: white;
+  border: solid white 5px;
+  box-shadow: yellow 0 0 10px 5px;
+}
