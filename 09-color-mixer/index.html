@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Color Mixer with Vue</title>
+</head>
+
+<body>
+    <header>
+        <div id="app">
+            <input class="red" type="range" step="1" min="0" max="255" v-model="state.clrR" @input="updateColorValue">
+            <input class="green" type="range" step="1" min="0" max="255" v-model="state.clrG" @input="updateColorValue">
+            <input class="blue" type="range" step="1" min="0" max="255" v-model="state.clrB" @input="updateColorValue">
+            <p id="hexacode"> {{hexCode}}</p>
+            <button id="button" @click="getData">Random Color</button>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
