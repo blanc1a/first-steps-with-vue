@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with State Mangement</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <form id="app" @submit.prevent="addToDoItem">
+        <h1>Todo App</h1>
+        <!--Browser muss wissen, dass radiobuttons teil eines Sets sind => name-attribut-->
+        <!--Um radiobuttons trotzdem zu unterscheiden => id-attribut & value-attribut-->
+        <!--label for-attribut connected mit input id-attribut-->
+        <ul id="filterListe">
+            <li>
+                <label for="all">All </label>
+                <input id="all" type="radio" name="filterOption" value="all" v-model="filter" checked>
+            </li>
+            <li>
+                <label for="open">Open </label>
+                <input id="open" type="radio" name="filterOption" value="open" v-model="filter">
+            </li>
+            <li>
+                <label for="done">Done </label>
+                <input id="done" type="radio" name="filterOption" value="done" v-model="filter">
+            </li>
+        </ul>
+        <div class="removeToDo">
+            <button id="removeButton" @click="removeToDoItem">Remove done Todos</button>
+        </div>
+        <input id="newToDo" type="text" placeholder="What's up?" v-model="newTodo">
+        <button id="addButton" @click="addToDoItem">Add</button>
+        <ul id="List">
+            <li v-for="todo in filteredTodos" :key="todo.id">
+                <input id="ToDos" type="checkbox" name="ToDos" v-model="todo.done" @click="checkedToDos(todo)">
+                <label id="firstToDo" for="ToDos" :class="{'checked': todo.done}">{{todo.description}}</label>
+            </li>
+        </ul>
+    </form>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
